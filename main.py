@@ -7,10 +7,10 @@ BACKGROUND_COLOR = "#B1DDC6"
 # Reading the database
 try:
     database = pd.read_csv(
-        filepath_or_buffer='projects/flash-card/data/words_to_learn.csv')
+        filepath_or_buffer='projects/flash-card-game/data/words_to_learn.csv')
 
 except FileNotFoundError:
-    original_data = pd.read_csv('projects/flash-card/data/english_words.csv')
+    original_data = pd.read_csv('projects/flash-card-game/data/english_words.csv')
     records = original_data.to_dict(orient='records')
 
 else:
@@ -66,7 +66,7 @@ def is_known():
 
     records.remove(current_card)
     data = pd.DataFrame(records)
-    data.to_csv('projects/flash-card/data/words_to_learn.csv', index=False)
+    data.to_csv('projects/flash-card-game/data/words_to_learn.csv', index=False)
 
     next_card()
 
@@ -80,11 +80,11 @@ window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 flip_timer = window.after(3000, func=flip_card)
 
 # Getting the images
-image_right = tk.PhotoImage(file='projects/flash-card/images/right.png')
-image_left = tk.PhotoImage(file='projects/flash-card/images/wrong.png')
+image_right = tk.PhotoImage(file='projects/flash-card-game/images/right.png')
+image_left = tk.PhotoImage(file='projects/flash-card-game/images/wrong.png')
 card_front_img = tk.PhotoImage(
-    file='projects/flash-card/images/card_front.png')
-card_back_img = tk.PhotoImage(file='projects/flash-card/images/card_back.png')
+    file='projects/flash-card-game/images/card_front.png')
+card_back_img = tk.PhotoImage(file='projects/flash-card-game/images/card_back.png')
 
 # Canvas
 canvas = tk.Canvas(width=800, height=526,
