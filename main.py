@@ -10,7 +10,8 @@ try:
         filepath_or_buffer='projects/flash-card-game/data/words_to_learn.csv')
 
 except FileNotFoundError:
-    original_data = pd.read_csv('projects/flash-card-game/data/english_words.csv')
+    original_data = pd.read_csv(
+        'projects/flash-card-game/data/english_words.csv')
     records = original_data.to_dict(orient='records')
 
 else:
@@ -84,7 +85,8 @@ image_right = tk.PhotoImage(file='projects/flash-card-game/images/right.png')
 image_left = tk.PhotoImage(file='projects/flash-card-game/images/wrong.png')
 card_front_img = tk.PhotoImage(
     file='projects/flash-card-game/images/card_front.png')
-card_back_img = tk.PhotoImage(file='projects/flash-card-game/images/card_back.png')
+card_back_img = tk.PhotoImage(
+    file='projects/flash-card-game/images/card_back.png')
 
 # Canvas
 canvas = tk.Canvas(width=800, height=526,
